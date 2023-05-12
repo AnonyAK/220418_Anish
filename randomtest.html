@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Web App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  
+    h1 {
+      color: blue;
+    }
+  
+    button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .product {
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+    }
+
+    .product img {
+      height: 150px;
+    }
+
+    .product h2 {
+      margin: 10px 0;
+    }
+
+    .product button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My Web App</h1>
+  <p>Check out our selection of fresh fruits:</p>
+  <div id="fruitList">
+    <div class="product">
+      <img src="apple.jpg" alt="Apples">
+      <h2>Apples</h2>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="banana.jpg" alt="Bananas">
+      <h2>Bananas</h2>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="orange.jpg" alt="Oranges">
+      <h2>Oranges</h2>
+      <button>Add to Cart</button>
+    </div>
+    <!-- add more product divs here -->
+  </div>
+  <script>
+    let buttons = document.getElementsByTagName("button");
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function() {
+        console.log("Added to cart: " + buttons[i].previousElementSibling.textContent);
+      });
+    }
+  </script>
+</body>
+</html>
